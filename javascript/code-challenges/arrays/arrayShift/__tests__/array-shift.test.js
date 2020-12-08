@@ -20,4 +20,8 @@ describe('code challenge', () => {
     it('for array with non-numbers, add to middle as expected', () => {
         return expect(insertShiftArray(['blah', {name: 'dina'}, null, 'foo', {text:'bar'}], 5)).toStrictEqual(['blah', {name: 'dina'}, null, 5, 'foo', {text:'bar'}]);
     });
+
+    it('throw an error if what we pass in isn\'t an array', () => {
+        return expect(() => insertShiftArray("blah", 5)).toThrow();
+    });
 })
