@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 function insertShiftArray(array,valueToAdd) {
     for (let i= array.length; i>Math.ceil((array.length-1)/2); i--) {
@@ -7,3 +7,5 @@ function insertShiftArray(array,valueToAdd) {
     array[Math.ceil((array.length-1)/2)] = valueToAdd;
     return array;
 }
+
+module.exports = insertShiftArray;
