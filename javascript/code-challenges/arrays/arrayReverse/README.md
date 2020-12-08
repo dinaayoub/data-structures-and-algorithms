@@ -15,4 +15,4 @@ Since we are swapping in-place, the storage needed is just the temp variable, so
 
 ## Solution
 
-![Solution](assets/reverse-array-whiteboard.png)
+![Solution](assets/array-reverse.png)
