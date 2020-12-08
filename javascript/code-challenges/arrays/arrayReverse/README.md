@@ -14,4 +14,4 @@ Since we are swapping in-place, the storage needed is just the temp variable, so
 
 ## Solution
 <!-- Embedded whiteboard image -->
-[!assets/reverse-array-whiteboard.png]
+![assets/reverse-array-whiteboard.png]
