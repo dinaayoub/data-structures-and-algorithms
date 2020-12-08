@@ -66,4 +66,4 @@ The final structure should resemble this:
 
 #### Table of Contents
 
-- [Array Reverse](javascript/code-challenges-arrays/array-reverse/README.md)
+- [Array Reverse](javascript/code-challenges/arrays/arrayReverse/README.md)
