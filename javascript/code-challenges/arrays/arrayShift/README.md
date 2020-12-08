@@ -26,3 +26,5 @@ This will only require one new storage spot at the end of the array, so storage 
 
 ## Solution
 ![array-shift](assets/array-shift.png)
+
+[Code](array-shift.js)

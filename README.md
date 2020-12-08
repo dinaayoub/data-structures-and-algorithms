@@ -1,5 +1,10 @@
 # Data Structures and Algorithms
 
+## Table of Contents
+
+- [Array Reverse](javascript/code-challenges/arrays/arrayReverse/README.md)
+- [Array Shift](javascript/code-challenges/arrays/arrayShift/README.md)
+
 ## Create a copy of this repository
 
 1. Create a new repository in your GitHub account called `data-structures-and-algorithms`
@@ -64,6 +69,3 @@ The final structure should resemble this:
   └── README.md
 ```
 
-#### Table of Contents
-
-- [Array Reverse](javascript/code-challenges/arrays/arrayReverse/README.md)
