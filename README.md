@@ -4,6 +4,7 @@
 
 - [Array Reverse](javascript/code-challenges/arrays/arrayReverse/README.md)
 - [Array Shift](javascript/code-challenges/arrays/arrayShift/README.md)
+- [Array Binary Search](javascript/code-challenges/arrays/arrayBinarySearch/README.md)
 
 ## Create a copy of this repository
 
