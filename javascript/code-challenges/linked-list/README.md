@@ -15,6 +15,7 @@ Solution by Dina Ayoub
   * .append(value) which adds a new node with the given value to the end of the list
   * .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
   * .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+  * .kthFromEnd(k) which will return the kth value from the end of the linked list
 
 ## Efficiency (Big O)
 
@@ -42,6 +43,10 @@ insertAfter:
 - Time - O(n)
 - Space - O(1)
 
+kthFromEnd:
+- Time - O(n)
+- Space - O(1)
+
 ## Solution
 
 [Code](linked-list.js)
@@ -59,3 +64,7 @@ insertAfter:
 ### Insert After: insertAfter(valueToSearchFor, valueToInsert)
 
 ![insertAfter](assets/ll-4.png)
+
+### Kth From End: kthFromEnd(k)
+
+![kthFromEnd](assets/ll-kth-from-end.png)
