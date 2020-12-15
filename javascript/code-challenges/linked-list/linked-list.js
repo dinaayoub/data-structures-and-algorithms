@@ -47,6 +47,7 @@ class LinkedList {
 
     append(value) {
         if (!value) throw new Error('No value provided to append to linked list');
+        if (!this.head) this.insert(value);
         var currentNode = this.head;
         while (currentNode.next) {
             currentNode = currentNode.next;
@@ -114,13 +115,13 @@ class LinkedList {
         //input is k, number from the end
         //output is value of item at k from the end
         if (k < 0) throw new Error('Invalid value for k');
+        if (!Number.isInteger(k)) throw new Error('Invalid non-integer value for k')
         if (!this.head) throw new Error('Linked list is empty');
         var counter = 0;
         var currentNode = this.head;
         while (currentNode.next) {
             counter++;
             currentNode = currentNode.next;
-            console.log(counter);    
         }
         
         var n = counter - k;
