@@ -109,6 +109,31 @@ class LinkedList {
         }
         throw new Error('Could not find the value provided in the linked list');
     }
+
+    kthFromEnd(k) {
+        //input is k, number from the end
+        //output is value of item at k from the end
+        if (k < 0) throw new Error('Invalid value for k');
+        if (!this.head) throw new Error('Linked list is empty');
+        var counter = 0;
+        var currentNode = this.head;
+        while (currentNode.next) {
+            counter++;
+            currentNode = currentNode.next;
+            console.log(counter);    
+        }
+        
+        var n = counter - k;
+        if (n === 0) return this.head.value;
+        if (n < 0) throw new Error('k is too large');
+        var i = 0;
+        currentNode = this.head;
+        while (i < n) {
+            currentNode = currentNode.next;
+            i++;
+        }
+        return currentNode.value;
+    }
 }
 
 module.exports = LinkedList;
