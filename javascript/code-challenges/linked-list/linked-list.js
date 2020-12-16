@@ -47,7 +47,7 @@ class LinkedList {
 
     append(value) {
         if (!value) throw new Error('No value provided to append to linked list');
-        if (!this.head) this.insert(value);
+        if (!this.head) return this.insert(value);
         var currentNode = this.head;
         while (currentNode.next) {
             currentNode = currentNode.next;
@@ -117,23 +117,28 @@ class LinkedList {
         if (k < 0) throw new Error('Invalid value for k');
         if (!Number.isInteger(k)) throw new Error('Invalid non-integer value for k')
         if (!this.head) throw new Error('Linked list is empty');
+        var counter = this.getCount();
+        
+        var n = counter - k;
+        if (n === 0) return this.head.value;
+        if (n < 0) throw new Error('k is too large');
+        var i = 0;
+        var currentNode = this.head;
+        while (i < n) {
+            currentNode = currentNode.next;
+            i++;
+        }
+        return currentNode.value;
+    }
+
+    getCount(){
         var counter = 0;
         var currentNode = this.head;
         while (currentNode.next) {
             counter++;
             currentNode = currentNode.next;
         }
-        
-        var n = counter - k;
-        if (n === 0) return this.head.value;
-        if (n < 0) throw new Error('k is too large');
-        var i = 0;
-        currentNode = this.head;
-        while (i < n) {
-            currentNode = currentNode.next;
-            i++;
-        }
-        return currentNode.value;
+        return counter;
     }
 }
 

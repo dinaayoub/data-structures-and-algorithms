@@ -1,7 +1,26 @@
 'use strict';
 
 const LinkedList = require("./linked-list");
+const zipLists = require('./zip-lists');
 
+/*
+//Code challenge 08
+var ll1 = new LinkedList();
+ll1.append('a');
+ll1.append('c');
+ll1.append('e');
+console.log('LINKED LIST 1: ', ll1.toString());
+
+var ll2 = new LinkedList();
+ll2.append('b');
+ll2.append('d');
+ll2.append('f');
+ll2.append('g');
+console.log('LINKED LIST 2: ',ll2.toString());
+
+console.log('ZIPPED LIST: ',zipLists(ll1,ll2).toString());
+
+*/
 /*
 //Code Challenge 06 & 07
 var linkedList = new LinkedList();
