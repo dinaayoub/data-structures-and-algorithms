@@ -15,7 +15,7 @@ function binarySearch(array, valueToSearchFor) {
     }
     return -1;
 }
-
+/*
 console.log(binarySearch([1, 2, 3, 5], 1)); // should return 0
 console.log(binarySearch([1, 2, 3, 5], 2)); // should return 1
 console.log(binarySearch([1, 2, 3, 5], 3)); // should return 2
@@ -32,4 +32,4 @@ console.log(binarySearch(['a', 'b', 'c', 'd', 'f', 'y'], 'e')); // should return
 console.log(binarySearch(['a', 'b', 'c', 'd', 'f', 'y'], 'f')); // should return 4
 console.log(binarySearch(['a', 'b', 'c', 'd', 'f', 'y'], 'x')); // should return -1
 console.log(binarySearch(['a', 'b', 'c', 'd', 'f', 'y'], 'z')); // should return -1
-console.log(binarySearch(['a', 'b', 'c', 'd', 'f', 'y'], 'A')); // should return -1
+console.log(binarySearch(['a', 'b', 'c', 'd', 'f', 'y'], 'A')); // should return -1*/

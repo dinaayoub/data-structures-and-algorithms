@@ -100,7 +100,7 @@ const howManyTreats = (arr) => {
       errand.items.forEach(item => {
         if (item.name === 'Treats') {
           qty= item.quantity;
-          console.log(qty);
+          //console.log(qty);
         }
       })
     }

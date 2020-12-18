@@ -47,7 +47,7 @@ const createServer = () => {
 
   var server = app.listen(3301, function () {
     var port = server.address().port;
-    console.log('Example app listening at port', port);
+    //console.log('Example app listening at port', port);
   });
   return server;
 };
@@ -102,7 +102,7 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
-  console.log('original array of arrays: ' + input);
+  //console.log('original array of arrays: ' + input);
   var clearedArrays = input.map(individualArray => {
     //console.log('original array: ' + individualArray);
     var filteredArray= individualArray.filter(eachNumber => {
@@ -114,7 +114,7 @@ const divisibleByFiveTwoToThePower = (input) => {
     //console.log('array with 2 to the power of each number: ' + poweredArray);
     return poweredArray;
   });
-  console.log(clearedArrays);
+  //console.log(clearedArrays);
   return clearedArrays;
 };
 

@@ -118,7 +118,6 @@ class LinkedList {
     if (!Number.isInteger(k)) throw new Error('Invalid non-integer value for k');
     if (!this.head) throw new Error('Linked list is empty');
     var counter = this.getCount();
-
     var n = counter - k;
     if (n === 0) return this.head.value;
     if (n < 0) throw new Error('k is too large');
