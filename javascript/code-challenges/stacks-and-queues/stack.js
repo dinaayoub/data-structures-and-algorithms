@@ -8,7 +8,7 @@ class Stack{
   }
 
   push(value){
-    if (!value && typeof(value)!=='number') throw new Error('Cannot push an empty object onto the stack');
+    if (value===null || value ===undefined) throw new Error('Cannot push an empty object onto the stack');
     var node = new Node(value);
     var temp = this.top;
     this.top = node;
