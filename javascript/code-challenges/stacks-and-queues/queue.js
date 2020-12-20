@@ -9,6 +9,7 @@ class Queue {
 
   enqueue(value){
     var node = new Node(value);
+    if (!this.front) this.front = node;
     var temp = this.rear;
     this.rear = node;
     node.next = temp;
@@ -29,6 +30,18 @@ class Queue {
   isEmpty(){
     if (this.front) return false;
     return true;
+  }
+
+  toString() {
+    if (!this.front) return 'NULL';
+    var currentNode = this.front;
+    var string = ``;
+    while (currentNode) {
+      string += `{${currentNode.value}} -> `;
+      currentNode = currentNode.next;
+    }
+    string += 'NULL';
+    return string;
   }
 }
 
