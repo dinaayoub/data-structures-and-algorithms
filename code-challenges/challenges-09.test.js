@@ -33,7 +33,7 @@ const createServer = () => {
 
   var server = app.listen(3301, function () {
     var port = server.address().port;
-    console.log('Example app listening at port', port);
+    //console.log('Example app listening at port', port);
   });
   return server;
 };

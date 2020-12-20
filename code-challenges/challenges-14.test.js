@@ -19,7 +19,7 @@ const createServer = () => {
 
   var server = app.listen(3000, function () {
     var port = server.address().port;
-    console.log('Example app listening at port', port);
+    //console.log('Example app listening at port', port);
   });
   return server;
 };
@@ -137,7 +137,7 @@ This data could be sorted by name or price.
 const sortBy = (property, arr) => {
   // Solution code here...
   return arr.sort((a, b) => {
-    console.log(a[property]);
+    //console.log(a[property]);
     if (typeof (a[property]) === 'string') {
       if (a[property].toLowerCase() < b[property].toLowerCase()) {
         return -1;
