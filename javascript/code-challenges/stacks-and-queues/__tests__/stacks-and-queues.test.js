@@ -63,13 +63,37 @@ describe('Queues',() => {
     expect(queue.front.value).toStrictEqual('a');
   });
 
-  // it('Can successfully enqueue multiple values into a queue', () => {
-  //   queue.enqueue('b');
-  //   queue.enqueue('c');
-  //   queue.enqueue('d');
-  //   expect(queue.front.value).toStrictEqual('a');
-  //   expect(queue.rear.value).toStrictEqual('d');
-  //   expect(queue.toString()). toStrictEqual('{a} -> {b} -> {c} -> {d} -> NULL');
-  // });
+  it('Can successfully enqueue multiple values into a queue', () => {
+    queue.enqueue('b');
+    queue.enqueue('c');
+    queue.enqueue('d');
+    expect(queue.front.value).toStrictEqual('a');
+    expect(queue.rear.value).toStrictEqual('d');
+    expect(queue.toString()). toStrictEqual('{a} -> {b} -> {c} -> {d} -> NULL');
+  });
 
+  it('Can successfully dequeue out of a queue the expected value', () => {
+    var node = queue.dequeue();
+    expect(node.value).toStrictEqual('a');
+    expect(queue.front.value).toStrictEqual('b');
+  });
+
+  it('Can successfully peek into a queue, seeing the expected value', () => {
+    expect(queue.peek()).toStrictEqual('b');
+  });
+
+  it('Can successfully empty a queue after multiple dequeues', () => {
+    while (queue.front) {
+      queue.dequeue();
+    }
+    expect(queue.isEmpty()).toBe(true);
+  });
+
+  it('Calling dequeue or peek on empty queue raises exception', () => {
+    while (queue.front) {
+      queue.dequeue();
+    }
+    expect(() => { queue.dequeue(); }).toThrow();
+    expect(() => { queue.peek(); }).toThrow();
+  });
 });
