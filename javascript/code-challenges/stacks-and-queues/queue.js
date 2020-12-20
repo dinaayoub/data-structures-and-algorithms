@@ -9,10 +9,13 @@ class Queue {
 
   enqueue(value){
     var node = new Node(value);
-    if (!this.front) this.front = node;
-    var temp = this.rear;
-    this.rear = node;
-    node.next = temp;
+    if (!this.front) {
+      this.front = node;
+      this.rear = node;
+    } else {
+      this.rear.next = node;
+      this.rear = node;
+    }
   }
 
   dequeue(){
