@@ -63,13 +63,13 @@ describe('Queues',() => {
     expect(queue.front.value).toStrictEqual('a');
   });
 
-  it('Can successfully enqueue multiple values into a queue', () => {
-    queue.enqueue('b');
-    queue.enqueue('c');
-    queue.enqueue('d');
-    expect(queue.front.value).toStrictEqual('a');
-    expect(queue.rear.value).toStrictEqual('d');
-    expect(queue.toString()). toStrictEqual('{a} -> {b} -> {c} -> {d} -> NULL');
-  });
+  // it('Can successfully enqueue multiple values into a queue', () => {
+  //   queue.enqueue('b');
+  //   queue.enqueue('c');
+  //   queue.enqueue('d');
+  //   expect(queue.front.value).toStrictEqual('a');
+  //   expect(queue.rear.value).toStrictEqual('d');
+  //   expect(queue.toString()). toStrictEqual('{a} -> {b} -> {c} -> {d} -> NULL');
+  // });
 
 });
