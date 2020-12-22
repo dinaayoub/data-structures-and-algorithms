@@ -55,11 +55,11 @@ PsuedoQueue
 ### Pseudo Queues
 
 [x] Can successfully instantiate an empty queue
-[] Can successfully enqueue into a queue
-[] Can successfully enqueue multiple values into a queue
-[] Can successfully dequeue out of a queue the expected value
-[] Can successfully empty a queue after multiple dequeues
-[] Calling dequeue on empty queue raises exception
+[x] Can successfully enqueue into a queue
+[x] Can successfully enqueue multiple values into a queue
+[x] Can successfully dequeue out of a queue the expected value
+[x] Can successfully empty a queue after multiple dequeues
+[x] Calling dequeue on empty queue raises exception
 
 ## Solution
 
