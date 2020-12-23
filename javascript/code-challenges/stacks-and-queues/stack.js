@@ -28,8 +28,7 @@ class Stack{
   }
 
   isEmpty() {
-    if (this.top) return false;
-    return true;
+    return (!this.top);
   }
 
   toString() {
