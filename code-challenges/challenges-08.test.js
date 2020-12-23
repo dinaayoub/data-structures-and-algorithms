@@ -12,9 +12,8 @@ const createServer = () => {
   const express = require('express');
   const app = express();
   app.get('/hello', sayHello);
-
-  var server = app.listen(3301, function () {
-    var port = server.address().port;
+  var port = 3301;
+  var server = app.listen(port, function () {
     //console.log('Example app listening at port', port);
   });
   return server;
