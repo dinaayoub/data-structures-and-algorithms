@@ -1,6 +1,5 @@
 'use strict';
 
-const Animal = require('../animal');
 const AnimalShelter = require('../animal-shelter');
 const Cat = require('../cat');
 const Dog = require('../dog');
