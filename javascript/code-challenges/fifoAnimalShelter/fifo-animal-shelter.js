@@ -10,12 +10,13 @@ var foofoo = new Dog('foofoo',20,'white','husky');
 var strawberry = new Dog('strawberry',70,'black','great dane');
 
 homewardPet.enqueue(bendy);
-homewardPet.enqueue(foofoo);
-homewardPet.enqueue(strawberry);
-homewardPet.enqueue(pointy);
 
 console.log(homewardPet.dequeue());
 console.log(homewardPet.dequeue('Cat').name);
+
+homewardPet.enqueue(foofoo);
+homewardPet.enqueue(strawberry);
+homewardPet.enqueue(pointy);
 console.log(homewardPet.dequeue('Dog').name);
 console.log(homewardPet.dequeue('Cat').name);
 console.log(homewardPet.dequeue('Dog').name);
