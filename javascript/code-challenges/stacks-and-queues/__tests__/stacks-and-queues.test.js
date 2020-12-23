@@ -74,7 +74,7 @@ describe('Queues',() => {
 
   it('Can successfully dequeue out of a queue the expected value', () => {
     var node = queue.dequeue();
-    expect(node.value).toStrictEqual('a');
+    expect(node).toStrictEqual('a');
     expect(queue.front.value).toStrictEqual('b');
   });
 

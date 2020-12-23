@@ -22,7 +22,7 @@ class Queue {
     if (!this.front) throw new Error('Queue is empty, cannot dequeue.');
     var temp = this.front;
     this.front = this.front.next;
-    return temp;
+    return temp.value;
   }
 
   peek(){
