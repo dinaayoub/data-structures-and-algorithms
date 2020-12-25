@@ -1,72 +1,37 @@
 'use strict';
 
-const Queue = require('../stacks-and-queues/queue');
+const BinarySearchTree = require('./binary-search-tree');
 const Node = require('./node');
 
-class BinaryTree {
-  constructor() {
-    this.root = null;
-    this.collection = [];
-  }
-
-  add(value){
-    var node = new Node(value);
-    //where do we put it?
-  }
-
-  preOrder(root) {
-    try {
-      if (!root) return null;
-      console.log(root.value); //or whatever operation you need to perform on each node.
-      this.collection.push(root.value);
-      if (root.left) this.preOrder(root.left);
-      if (root.right) this.preOrder(root.right);
-      return this.collection;
-    }
-    catch (err) {
-      console.error('Error traversing the binary tree', err);
-    }
-  }
-
-  inOrder(root) {
-    try {
-      if (!root) return null;
-      if (root.left) this.inOrder(root.left);
-      console.log(root.value); //or whatever operation you need to perform on each node.
-      this.collection.push(root.value);
-      if (root.right) this.inOrder(root.right);
-      return this.collection;
-    }
-    catch (err) {
-      console.error('Error traversing the binary tree', err);
-    }
-  }
-
-  postOrder(root) {
-    try {
-      if (!root) return null;
-      if (root.left) this.postOrder(root.left);
-      if (root.right) this.postOrder(root.right);
-      console.log(root.value); //or whatever operation you need to perform on each node.
-      this.collection.push(root.value);
-      return this.collection;
-    }
-    catch (err) {
-      console.error('Error traversing the binary tree', err);
-    }
+var binarySearchTree = new BinarySearchTree();
+binarySearchTree.root = new Node(60);
+binarySearchTree.root.left = new Node(50);
+binarySearchTree.root.right = new Node(70);
+binarySearchTree.root.left.left = new Node(40);
+binarySearchTree.root.left.right = new Node(55);
 
 
-  }
-  breadthFirst(root) {
-    const queue = new Queue();
-    queue.enqueue(root);
-    while (queue.peek) {
-      var frontNode = queue.dequeue();
-      console.log(frontNode.value); //or whatever operation you need to perform on each node.
-    }
-    if (frontNode.left) queue.enqueue(frontNode.left);
-    if (frontNode.right) queue.enqueue(frontNode.right);
-  }
-}
+//should be false, output: false
+console.log('contains 22:',binarySearchTree.contains(22));
+console.log('contains -1:',binarySearchTree.contains(-1));
+//console.log('contains no param given:',binarySearchTree.contains()); //correctly throws an error
+console.log('contains 65:',binarySearchTree.contains(65));
 
-module.exports = BinaryTree;
+//should be true, output: true
+console.log('contains 55:',binarySearchTree.contains(55));
+console.log('contains 60:',binarySearchTree.contains(60));
+console.log('contains 50:',binarySearchTree.contains(50));
+console.log('contains 40:',binarySearchTree.contains(40));
+console.log('contains 70:',binarySearchTree.contains(70));
+
+//pre-order should be 60, 50, 40, 55, 70
+//output: [ 60, 50, 40, 55, 70 ]
+console.log('Pre-order:',binarySearchTree.preOrder(binarySearchTree.root));
+
+//in-order should be 40 50 55 60 70
+//output: [ 40, 50, 55, 60, 70 ]
+console.log('In-order:',binarySearchTree.inOrder(binarySearchTree.root));
+
+//post-order should be 40 55 50 70 60
+//output: [ 40, 55, 50, 70, 60 ]
+console.log('Post-order:',binarySearchTree.postOrder(binarySearchTree.root));
