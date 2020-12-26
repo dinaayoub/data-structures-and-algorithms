@@ -14,6 +14,18 @@ describe('Binary Search Tree', ()=>{
     expect(binarySearchTree.preOrder(binarySearchTree.root)).toStrictEqual([60, 50, 40, 55, 70]);
   });
 
+  it('Can successfully throw an error if not sent a parameter to add to the tree', ()=>{
+    expect(() => {
+      binarySearchTree.add();
+    }).toThrow();
+    expect(() => {
+      binarySearchTree.add(null);
+    }).toThrow();
+    expect(() => {
+      binarySearchTree.add(undefined);
+    }).toThrow();
+  });
+
   it('Can successfully return false if a tree does not contain the item we are searching for', ()=>{
     expect(binarySearchTree.contains(22)).toBe(false);
     expect(binarySearchTree.contains(-1)).toBe(false);
