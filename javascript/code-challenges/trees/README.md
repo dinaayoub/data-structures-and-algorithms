@@ -6,14 +6,14 @@ By Dina Ayoub
 
 ## Challenge
 
-[x] Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
-[x] Create a BinaryTree class
-[x] Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.
-[x] Any exceptions or errors that come from your code should be semantic, capturable errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
+[X] Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
+[X] Create a BinaryTree class
+[X] Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.
+[X] Any exceptions or errors that come from your code should be semantic, capturable errors. For example, rather than a default error thrown by your language, your code should raise/throw a custom, semantic error that describes what went wrong in calling the methods you wrote for this lab.
 
-[x] Create a BinarySearchTree class
-[x] Define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
-[x] Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
+[X] Create a BinarySearchTree class
+[X] Define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
+[X] Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
 
 ## Approach & Efficiency
 
