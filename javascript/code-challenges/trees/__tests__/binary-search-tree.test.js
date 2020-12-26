@@ -1,15 +1,18 @@
 'use strict';
 
 const BinarySearchTree = require('../binary-search-tree');
-const Node = require('../node');
 
 describe('Binary Search Tree', ()=>{
   var binarySearchTree = new BinarySearchTree();
-  binarySearchTree.root = new Node(60);
-  binarySearchTree.root.left = new Node(50);
-  binarySearchTree.root.right = new Node(70);
-  binarySearchTree.root.left.left = new Node(40);
-  binarySearchTree.root.left.right = new Node(55);
+
+  it('Can successfully add nodes in the correct location', () =>{
+    binarySearchTree.add(60);
+    binarySearchTree.add(50);
+    binarySearchTree.add(70);
+    binarySearchTree.add(40);
+    binarySearchTree.add(55);
+    expect(binarySearchTree.preOrder(binarySearchTree.root)).toStrictEqual([60, 50, 40, 55, 70]);
+  });
 
   it('Can successfully return false if a tree does not contain the item we are searching for', ()=>{
     expect(binarySearchTree.contains(22)).toBe(false);

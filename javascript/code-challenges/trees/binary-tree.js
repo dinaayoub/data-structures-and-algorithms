@@ -1,17 +1,11 @@
 'use strict';
 
 const Queue = require('../stacks-and-queues/queue');
-const Node = require('./node');
 
 class BinaryTree {
   constructor() {
     this.root = null;
     this.collection = [];
-  }
-
-  add(value){
-    var node = new Node(value);
-    //where do we put it?
   }
 
   preOrder(root) {

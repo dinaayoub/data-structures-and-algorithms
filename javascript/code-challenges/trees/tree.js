@@ -4,12 +4,20 @@ const BinarySearchTree = require('./binary-search-tree');
 const Node = require('./node');
 
 var binarySearchTree = new BinarySearchTree();
+
+binarySearchTree.add(60);
+binarySearchTree.add(50);
+binarySearchTree.add(70);
+binarySearchTree.add(40);
+binarySearchTree.add(55);
+
+/*
 binarySearchTree.root = new Node(60);
 binarySearchTree.root.left = new Node(50);
 binarySearchTree.root.right = new Node(70);
 binarySearchTree.root.left.left = new Node(40);
 binarySearchTree.root.left.right = new Node(55);
-
+*/
 
 //should be false, output: false
 console.log('contains 22:',binarySearchTree.contains(22));
