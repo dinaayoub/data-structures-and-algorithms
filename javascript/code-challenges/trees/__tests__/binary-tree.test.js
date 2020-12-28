@@ -48,4 +48,12 @@ describe('Binary Tree', () => {
     expect(binaryTree.postOrder(binaryTree.root)).toStrictEqual([40, 55, 50, 70, 60]);
   });
 
+  it('Can successfully return the maximum value in the tree', () => {
+    binaryTree.root.left.left.left = new Node(10);
+    binaryTree.root.left.left.right= new Node(104);
+    binaryTree.root.left.right.left = new Node(505);
+    binaryTree.root.left.right.right = new Node(525);
+    expect(binaryTree.getMax()).toBe(525);
+  });
+
 });
