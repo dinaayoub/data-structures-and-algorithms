@@ -21,6 +21,7 @@ By Dina Ayoub
 
 Traversal: O(n)
 findMax value: O(n) time, O(1) space.
+![Find Max Value](assets/findMaxValue.png)
 
 ## Binary Search Tree
 
