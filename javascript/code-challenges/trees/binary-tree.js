@@ -67,6 +67,7 @@ class BinaryTree {
 
 
   }
+
   breadthFirst(root) {
     const queue = new Queue();
     queue.enqueue(root);
@@ -76,6 +77,23 @@ class BinaryTree {
     }
     if (frontNode.left) queue.enqueue(frontNode.left);
     if (frontNode.right) queue.enqueue(frontNode.right);
+  }
+
+  getMax(root){
+    var currentNode;
+    //if no root node is passed in, then use this instance's root.
+    if (!root) {currentNode = this.root; }
+    //otherwise we are calling this recursively on a specific node.
+    else currentNode = root;
+
+    var max = currentNode.value;
+    var left;
+    var right;
+    if (currentNode.left) left = this.getMax(currentNode.left);
+    if (currentNode.right) right = this.getMax(currentNode.right);
+    if (max < left) max = left;
+    if (max < right) max = right;
+    return max;
   }
 }
 
