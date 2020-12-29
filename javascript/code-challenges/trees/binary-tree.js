@@ -69,14 +69,16 @@ class BinaryTree {
   }
 
   breadthFirst(root) {
+    var array = [];
     const queue = new Queue();
     queue.enqueue(root);
-    while (queue.peek) {
+    while (!queue.isEmpty()) {
       var frontNode = queue.dequeue();
-      console.log(frontNode.value); //or whatever operation you need to perform on each node.
+      array.push(frontNode.value);
+      if (frontNode.left) queue.enqueue(frontNode.left);
+      if (frontNode.right) queue.enqueue(frontNode.right);
     }
-    if (frontNode.left) queue.enqueue(frontNode.left);
-    if (frontNode.right) queue.enqueue(frontNode.right);
+    return array;
   }
 
   getMax(root){

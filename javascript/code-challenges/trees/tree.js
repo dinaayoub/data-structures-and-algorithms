@@ -18,6 +18,8 @@ binaryTree.root.left = new Node(90);
 binaryTree.root.right = new Node(70);
 binaryTree.root.left.left = new Node(10);
 binaryTree.root.left.right = new Node(55);
+binaryTree.root.right.left = new Node(20);
+binaryTree.root.right.right = new Node(755);
 binaryTree.root.left.left.left = new Node(10);
 binaryTree.root.left.left.right= new Node(104);
 binaryTree.root.left.right.left = new Node(505);
@@ -49,4 +51,4 @@ binaryTree.root.left.right.right = new Node(525);
 // console.log('Post-order:',binarySearchTree.postOrder(binarySearchTree.root));
 
 //
-console.log(binaryTree.getMax());
+console.log(binaryTree.breadthFirst(binaryTree.root));

@@ -56,4 +56,9 @@ describe('Binary Tree', () => {
     expect(binaryTree.getMax()).toBe(525);
   });
 
+  it('Can successfully return an array of breadth-first values in the tree', () =>{
+    binaryTree.root.right.left = new Node(20);
+    binaryTree.root.right.right = new Node(755);
+    expect(binaryTree.breadthFirst(binaryTree.root)).toStrictEqual([ 60, 50, 70, 40, 55, 20, 755, 10, 104, 505, 525 ]);
+  });
 });
