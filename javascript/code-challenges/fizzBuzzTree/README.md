@@ -1,6 +1,6 @@
 # Challenge Summary
 
-Code challenge for class 17: FizzBuzzTree
+Code challenge for class 18: FizzBuzzTree
 
 Solution by Dina Ayoub
 
@@ -16,9 +16,13 @@ Solution by Dina Ayoub
 
 ## Efficiency (Big O)
 
-* Time –  
-* Space –
+* Time –  O(n)
+* Space – O(n)
 
 ## Testing
 
+no tests were required for this lab, but you can use the fizz-buzz-tree file to test it by running "node fizz-buzz-tree.js" as I have a large sample tree in there.
+
 ## Solution
+
+![fizzBuzzTree](assets/fizzBuzzTree.png)

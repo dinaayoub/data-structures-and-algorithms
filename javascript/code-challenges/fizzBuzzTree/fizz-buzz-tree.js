@@ -3,39 +3,24 @@
 const importedFiles = require('./node');
 const KaryTree = importedFiles.KaryTree;
 const Node = importedFiles.Node;
-const Queue = require('../stacks-and-queues/queue');
 const util = require('util');
 
 function fizzBuzzTree(tree) {
   var newTree = new KaryTree();
-  newTree.root = new Node(fizzBuzzString(tree.root.value));
+  newTree.root = new Node(getFizzBuzzString(tree.root.value));
 
   var recurse = (root, newRoot) => {
     root.children.forEach(child => {
-      newRoot.children.push(new Node(fizzBuzzString(child.value)));
+      newRoot.children.push(new Node(getFizzBuzzString(child.value)));
       recurse(child, newRoot.children[newRoot.children.length-1]);
     });
   };
-  //   var queue = new Queue();
-  //   queue.enqueue(tree.root);
-  //   newTree.root = new Node(fizzBuzzString(tree.root.value));
-  //   var previousNode = newTree.root;
-  //   while (!queue.isEmpty()) {
-  //     var treeNode = queue.dequeue();
-  //     //console.log (treeNode);
-  //     var newTreeNode = new Node(fizzBuzzString(treeNode.value));
-  //     previousNode.children.push(newTreeNode);
-  //     //console.log (newTreeNode);
-  //     treeNode.children.forEach((child, index) => {
-  //       queue.enqueue(child);
-  //       newTreeNode.children[index] = new Node(fizzBuzzString(child.value));
-  //     });
-  //   }
+
   recurse(tree.root,newTree.root);
   return newTree;
 }
 
-function fizzBuzzString(value) {
+function getFizzBuzzString(value) {
   var fizzBuzzString;
   if (!(value % 3) && !(value % 5)) fizzBuzzString = 'FizzBuzz';
   else if (!(value % 3)) fizzBuzzString = 'Fizz';
