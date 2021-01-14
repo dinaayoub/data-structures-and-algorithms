@@ -2,13 +2,13 @@
 
 function reverseArray(inputArray) {
 
-    for (let i = 0; i < Math.floor(inputArray.length / 2); i++) {
-        let tempValue = inputArray[i];
-        inputArray[i] = inputArray[inputArray.length - 1 - i];
-        inputArray[inputArray.length - 1 - i] = tempValue;
-    }
+  for (let i = 0; i < Math.floor(inputArray.length / 2); i++) {
+    let tempValue = inputArray[i];
+    inputArray[i] = inputArray[inputArray.length - 1 - i];
+    inputArray[inputArray.length - 1 - i] = tempValue;
+  }
 
-    return inputArray;
+  return inputArray;
 }
 /*
 console.log(reverseArray([1, 2, 3]));
