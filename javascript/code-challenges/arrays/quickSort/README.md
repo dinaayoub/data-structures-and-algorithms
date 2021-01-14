@@ -93,7 +93,10 @@ Testing with [8, 4, 23, 42, 16, 15]:
       - return low + 1 = 0 as "position"
       - quick sort the array with left of 0 and right of position - 1 = 0-1 = -1 (quickSort([8,4,15,42,16,23], 0, -1)) => this will do nothing because left is not less than right.
       - quick sort the array with left of position + 1 = 0+1 = 1 and right of 1  (quickSort([8,4,15,42,16,23], 1, 1)) => this will do nothing because left is not less than right.
-    - quick sort the array with left of position + 1 = 2+1 = 3 and right of 5  (quickSort([8,4,15,42,16,23], 3, 5))
+    - quick sort the array with left of position + 1 = 2+1 = 3 and right of 5  (quickSort([8,4,15,42,16,23], 3, 5)) -> rinse and repeat!
+
+![Quick Sort](assets/quick-sort.png)
+![Quick Sort Whiteboard](assets/quicksort.png)
 
 ### References
 
