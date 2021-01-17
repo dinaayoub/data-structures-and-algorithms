@@ -35,7 +35,7 @@ describe('Hash tables', () => {
     expect(foundItem).toBe(null);
   });
 
-  it('Can successfully handle a collision within the hashtable & retrieve that value', () =>{
+  it('Can successfully handle a collision within the hashtable & retrieve the correct value', () =>{
     //frdench running through the hash function returns the same index as french
     //which is zero
     hashTable.add('frdench','onion soup');
