@@ -30,11 +30,13 @@ Solution by Dina Ayoub
 * Time
 * Space
 
+## Solution
+
+![UML](assets/uml.png)
+
 ## Tests
 
-* [x]
-* [x]
-* [x]
-* [x]
-* [x]
-* [x]
+* [x] Can return the correct result when a word is repeated exactly as-is
+* [x] Can return an empty string if there are no repeats
+* [x] Can return an empty string if the sentence is empty
+* [x] Can return the correct result when the word is repeated with diferent case (capitals vs small letters)
