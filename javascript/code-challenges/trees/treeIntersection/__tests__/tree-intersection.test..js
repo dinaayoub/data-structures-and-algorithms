@@ -23,7 +23,6 @@ describe('Tree Intersection', () => {
   tree1.root.left.right.right = new Node(175);
   tree1.root.right.right.left = new Node(300);
   tree1.root.right.right.right = new Node(500);
-  // console.log(tree1);
 
   tree2.root= new Node(42);
   tree2.root.left = new Node(100);
@@ -64,7 +63,6 @@ describe('Tree Intersection', () => {
 
 
   it('Can return the correct results for two binary trees', () => {
-    // console.log(tree1);
     var resultsArray = treeIntersection(tree1, tree2);
     expect(resultsArray).toEqual([100,160,125,175,200,350,500]);
   });
@@ -78,7 +76,7 @@ describe('Tree Intersection', () => {
     tree1.root.left.left.value = 100;
     var resultsArray = treeIntersection(tree1,tree2);
     expect (resultsArray).toEqual([100,160,125,175,200,350,500]);
-
+    tree2.root.left.left.value = 100;
   });
 
   it('Can return empty array if either or both of the trees are empty', () => {
