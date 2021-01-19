@@ -15,6 +15,7 @@ class HashTable{
   // then get the remainder when you divide by the size
 
   hash(key) {
+    key = '' + key;
     var stringArray = key.split('');
     var num = stringArray.reduce((acc,val) => {
       return acc + val.charCodeAt(0);
