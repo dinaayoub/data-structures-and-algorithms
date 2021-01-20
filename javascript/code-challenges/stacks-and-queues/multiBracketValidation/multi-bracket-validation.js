@@ -1,5 +1,5 @@
 'use strict';
-const Stack = require('../stacks-and-queues/stack');
+const Stack = require('../stack');
 
 var stack = new Stack();
 
@@ -10,7 +10,7 @@ function multiBracketValidation(input) {
 
   var characterArray = input.split('');
 
-  for (let i=0;i<characterArray.length; i++) {
+  for (let i = 0; i < characterArray.length; i++) {
     if (characterArray[i] === '[' || characterArray[i] === '(' || characterArray[i] === '{') {
       stack.push(characterArray[i]);
     }
