@@ -28,8 +28,8 @@ Solution by Dina Ayoub
 
 ## Efficiency (Big O)
 
-* Time
-* Space
+* Time O(n) where n is the number of items in left table
+* Space O(n) where n is the number of items in left table.
 
 ## Solution
 
@@ -37,10 +37,7 @@ Solution by Dina Ayoub
 
 ## Tests
 
-* [x] 
-* [x] 
-* [x] 
-* [x] 
-* [x] 
-* [x] 
-* [x] 
+* [x] Can left join a standard input where both hashtables have keys the other doesn't
+* [x] Can still perform the left join correctly if there are hash collisions
+* [x] Can perform a left join if the second hashtable is empty
+* [x] Can return an empty array if the first hashtable is empty
