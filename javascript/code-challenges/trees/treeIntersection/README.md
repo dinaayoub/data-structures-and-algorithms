@@ -21,8 +21,8 @@ Solution by Dina Ayoub
 
 ## Efficiency (Big O)
 
-* Time
-* Space
+* Time - O(n)
+* Space - O(n)
 
 ## Solution
 
