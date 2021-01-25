@@ -1,8 +1,5 @@
 'use strict';
 const Graph = require('../graph');
-const Edge = require('../edge');
-const Vertex = require('../vertex');
-const util = require('util');
 
 describe('Graphs', () => {
 
@@ -60,7 +57,7 @@ describe('Graphs', () => {
     expect(neighbors.length).toBe(2);
     expect(neighbors[0].vertex).toStrictEqual(vertex3);
     expect(neighbors[1].vertex).toStrictEqual(vertex5);
-    console.log(neighbors);
+    // console. log(neighbors);
   });
 
   it('Can successfully return all the weights of the edges of the neighbors of a node in the graph', () => {
@@ -75,8 +72,48 @@ describe('Graphs', () => {
     expect(graph.size()).toBe(5);
   });
 
+  it('Can properly do a breadth first traversal of the graph with undirected edges', () => {
+    const exampleGraph = new Graph();
+    const metroville = exampleGraph.addVertex('Metroville');
+    const arendelle = exampleGraph.addVertex('Arendelle');
+    const monstropolis = exampleGraph.addVertex('Monstropolis');
+    const pandora = exampleGraph.addVertex('Pandora');
+    const narnia = exampleGraph.addVertex('Narnia');
+    const naboo = exampleGraph.addVertex('Naboo');
 
+    exampleGraph.addUnDirectedEdge(narnia, naboo);
+    exampleGraph.addUnDirectedEdge(pandora, arendelle);
+    exampleGraph.addUnDirectedEdge(arendelle, metroville);
+    exampleGraph.addUnDirectedEdge(metroville, narnia);
+    exampleGraph.addUnDirectedEdge(metroville, naboo);
+    exampleGraph.addUnDirectedEdge(arendelle, monstropolis);
+    exampleGraph.addUnDirectedEdge(monstropolis, naboo);
+    exampleGraph.addUnDirectedEdge(metroville, monstropolis);
 
+    let bfs = exampleGraph.breadthFirstSearch(pandora);
+    const array = Array.from(bfs);
+    expect(array).toStrictEqual(
+      [
+        pandora,
+        arendelle,
+        metroville,
+        monstropolis,
+        narnia,
+        naboo
+      ]);
+  });
 
+  it('Can properly do a breadth first traversal of the graph with directed edges', () => {
+    let bfs2 = graph.breadthFirstSearch(vertex1);
+    const array2 = Array.from(bfs2);
+    expect(array2).toStrictEqual(
+      [
+        vertex1,
+        vertex2,
+        vertex4,
+        vertex3,
+        vertex5
+      ]);
+  });
 
 });

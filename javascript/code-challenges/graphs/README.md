@@ -23,6 +23,9 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
   3. Include the weight of the connection in the returned collection
 5. Size()
   1. Returns the total number of nodes in the graph
+6. breadthFirst()
+  1. takes in a node
+  2. prints out the breadth first graph traversal from the given node
 
 ## Approach & Efficiency
 
@@ -41,6 +44,9 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 5. Size() 
   1. Time O(1) - assuming Map keeps track of its length while inserting objects, rather than by iterating over them when size is called.
   2. Space O(1)
+6. breadth First()
+  1. Time O(n^2)
+  2. Space O(n) because if the graph is just all connected to the provided node, the queue would end up with n-1 nodes. Also because we use a visitedNodes which will house all the nodes at the end (although this doesn't copy the actual nodes, just puts them by reference in a new Set)
 
 ## API
 
@@ -49,6 +55,7 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 3. getNodes() - returns all of the vertices in the graph as a Map
 4. getNeighbors(vertex) - returns an array of the edges of the given node, including the weight and the vertex this edge connects the given vertex to.
 5. size() - returns the total number of nodes in the graph.
+6. breadthFirstSearch(startNode) - starts from the given node and does a breadth first traversal of the tree. returns a Set with all the unique visited nodes.
 
 ## Tests
 
