@@ -32,9 +32,27 @@ class Graph {
     adjacencies.push(edge);
   }
 
+  addUnDirectedEdge(startVertex, endVertex, weight) {
+    //error checking: we Must have a starting and ending node
+    if (!this.adjacencyList.has(startVertex) || !this.adjacencyList.has(endVertex)) {
+      throw new Error('Can\'t add a directed edge if start or end node does not exist in the map');
+    }
+
+    //get startVertex from the Map (all of the vertices)
+    // push a new Edge that will connect startVertext to the end into the array along with the weight
+
+    const adjacencies = this.adjacencyList.get(startVertex);
+    const edge = new Edge(endVertex, weight);
+    adjacencies.push(edge);
+
+    const adjacencies2 = this.adjacencyList.get(endVertex);
+    const edge2 = new Edge(startVertex, weight);
+    adjacencies2.push(edge2);
+  }
+
   getNeighbors(vertex) {
     if (!this.adjacencyList.has(vertex)) {
-      throw new Error('This vertex is not in the graph. Invalid vertex: ', vertex);
+      throw new Error('This vertex is not in the graph. Invalid vertex: ', vertex.value);
     }
     return this.adjacencyList.get(vertex);
   }
@@ -45,26 +63,30 @@ class Graph {
     const visitedNodes = new Set();
 
     queue.enqueue(startNode);
+    //console.log({ queue });
     visitedNodes.add(startNode);
 
-    while (queue.length) {
+    while (!queue.isEmpty()) {
       //remove the first item in the queue
       const currentNode = queue.dequeue();
 
+      // console.log('current node = ', currentNode.value);
       //get all of the neighbors of the item we just dequeued
       const neighbors = this.getNeighbors(currentNode);
-
       //loop over all of the neighbors
       for (let neighbor of neighbors) {
+        //console.log('in for in loop');
         const neighborNode = neighbor.vertex;
 
         //if the set has the node that i'm looking for, do nothing
         if (visitedNodes.has(neighborNode))
           continue;
         else {
+          //console.log('add toi the set and queue', neighborNode);
           //otherwise i need to add it to the set
           visitedNodes.add(neighborNode);
           queue.enqueue(neighborNode);
+
         }
       }
     }
