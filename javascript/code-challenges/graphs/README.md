@@ -7,46 +7,46 @@ By Dina Ayoub
 Implement your own Graph. The graph should be represented as an adjacency list, and should include the following methods:
 
 1. AddNode()
-  1. Adds a new node to the graph
-  2. Takes in the value of that node
-  3. Returns the added node
+  * Adds a new node to the graph
+  * Takes in the value of that node
+  * Returns the added node
 2. AddEdge()
-  1. Adds a new edge between two nodes in the graph
-  2. Include the ability to have a “weight”
-  3. Takes in the two nodes to be connected by the edge
-  4. Both nodes should already be in the Graph
+  * Adds a new edge between two nodes in the graph
+  * Include the ability to have a “weight”
+  * Takes in the two nodes to be connected by the edge
+  * Both nodes should already be in the Graph
 3. GetNodes()
-  1. Returns all of the nodes in the graph as a collection (set, list, or similar)
+  * Returns all of the nodes in the graph as a collection (set, list, or similar)
 4. GetNeighbors()
-  1. Returns a collection of edges connected to the given node
-  2. Takes in a given node
-  3. Include the weight of the connection in the returned collection
+  * Returns a collection of edges connected to the given node
+  * Takes in a given node
+  * Include the weight of the connection in the returned collection
 5. Size()
-  1. Returns the total number of nodes in the graph
+  * Returns the total number of nodes in the graph
 6. breadthFirst()
-  1. takes in a node
-  2. prints out the breadth first graph traversal from the given node
+  * takes in a node
+  * prints out the breadth first graph traversal from the given node
 
 ## Approach & Efficiency
 
 1. addNode()
-  1. Time O(1)
-  2. Space O(1)
+  * Time O(1)
+  * Space O(1)
 2. addEdge()
-  1. Time O(n) because Map.get is O(n)
-  2. Space O(1)
+  * Time O(n) because Map.get is O(n)
+  * Space O(1)
 3. getNodes()
-  1. Time O(1) because the Map already exists, we just return it as-is
-  2. Space O(1) becase we just return a reference to the entire map
+  * Time O(1) because the Map already exists, we just return it as-is
+  * Space O(1) becase we just return a reference to the entire map
 4. GetNeighbors()
-  1. Time O(n) again because Map.get is O(n)
-  2. Space O(1) - unsure, assuming it returns by reference so not a copy
+  * Time O(n) again because Map.get is O(n)
+  * Space O(1) - unsure, assuming it returns by reference so not a copy
 5. Size() 
-  1. Time O(1) - assuming Map keeps track of its length while inserting objects, rather than by iterating over them when size is called.
-  2. Space O(1)
+  * Time O(1) - assuming Map keeps track of its length while inserting objects, rather than by iterating over them when size is called.
+  * Space O(1)
 6. breadth First()
-  1. Time O(n^2)
-  2. Space O(n) because if the graph is just all connected to the provided node, the queue would end up with n-1 nodes. Also because we use a visitedNodes which will house all the nodes at the end (although this doesn't copy the actual nodes, just puts them by reference in a new Set)
+  *. Time O(n^2)
+  *. Space O(n) because if the graph is just all connected to the provided node, the queue would end up with n-1 nodes. Also because we use a visitedNodes which will house all the nodes at the end (although this doesn't copy the actual nodes, just puts them by reference in a new Set)
 
 ## API
 
