@@ -1,6 +1,6 @@
 'use strict';
 const Graph = require('../graph');
-const getEdges = require('../get-edges/getEdges');
+const getEdges = require('../getEdges');
 
 describe('Graphs', () => {
 
