@@ -49,6 +49,7 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
   *. Space O(n) because if the graph is just all connected to the provided node, the queue would end up with n-1 nodes. Also because we use a visitedNodes which will house all the nodes at the end (although this doesn't copy the actual nodes, just puts them by reference in a new Set)
 
 ![white board](assets/uml.png)
+![Get Edges white board](assets/whiteboard.png)
 
 ## API
 
