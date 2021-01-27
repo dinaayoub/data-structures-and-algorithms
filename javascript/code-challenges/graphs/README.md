@@ -49,6 +49,7 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
   *. Space O(n) because if the graph is just all connected to the provided node, the queue would end up with n-1 nodes. Also because we use a visitedNodes which will house all the nodes at the end (although this doesn't copy the actual nodes, just puts them by reference in a new Set)
 
 ![white board](assets/uml.png)
+![Get Edges white board](assets/whiteboard.png)
 
 ## API
 
@@ -61,11 +62,22 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 
 ## Tests
 
-* [x] Node can be successfully added to the graph
-* [x] An edge can be successfully added to the graph
-* [x] A collection of all nodes can be properly retrieved from the graph
-* [x] All appropriate neighbors can be retrieved from the graph
-* [x] Neighbors are returned with the weight between nodes included
-* [x] The proper size is returned, representing the number of nodes in the graph
-* [x] A graph with only one node and edge can be properly returned
-* [x] An empty graph properly returns null
+### Graph Tests
+
+* [x] Can successfully return null if the graph is empty
+* [x] Can successfully add a node to the graph
+* [x] Can successfully return a graph with only one node
+* [x] Can successfully add an edge to the graph
+* [x] Can successfully return a graph with only 1 edge (two nodes and an edge)
+* [x] Can successfully return a set of all the nodes in the graph
+* [x] Can successfully return all the neighbors of a node in the graph
+* [x] Can successfully return all the weights of the edges of the neighbors of a node in the graph
+* [x] Can properly do a breadth first traversal of the graph with undirected edges
+* [x] Can properly do a breadth first traversal of the graph with directed edges
+
+#### Get Edges
+
+* [x] Can return true and correct cost if there is a direct flight on a multi location trip
+* [x] Can return false and $0 if there is no direct flight
+* [x] Can return false and $0 if graph is empty, or there are 1 or fewer cities in the array
+* [x] Can return false and $0 if graph is empty, or there are 1 or fewer cities in the array
