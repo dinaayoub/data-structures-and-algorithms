@@ -119,25 +119,38 @@ describe('Graphs', () => {
       ]);
   });
 
-  it('Can return true and correct cost if there is a direct flight on a multi location trip ', () => {
-    exampleGraph.addUnDirectedEdge(pandora, metroville, 82);
+  describe('Get Edges', () => {
 
-    let result = getEdges(exampleGraph, ['Arendelle', 'Monstropolis', 'Naboo']);
-    expect(result).toStrictEqual([true, 115]);
+    it('Can return true and correct cost if there is a direct flight on a multi location trip ', () => {
+      exampleGraph.addUnDirectedEdge(pandora, metroville, 82);
 
-    result = getEdges(exampleGraph, ['Metroville', 'Pandora']);
-    expect(result).toStrictEqual([true, 82]);
-  });
+      let result = getEdges(exampleGraph, ['Arendelle', 'Monstropolis', 'Naboo']);
+      expect(result).toStrictEqual([true, 115]);
 
-  it('Can return false and $0 if there is no direct flight', () => {
-    let res = getEdges(exampleGraph, ['Naboo', 'Pandora', 'Arendelle']);
-    expect(res).toStrictEqual([false, 0]);
+      result = getEdges(exampleGraph, ['Metroville', 'Pandora']);
+      expect(result).toStrictEqual([true, 82]);
+    });
 
-    res = getEdges(exampleGraph, ['Narnia', 'Arendelle', 'Naboo']);
-    expect(res).toStrictEqual([false, 0]);
+    it('Can return false and $0 if there is no direct flight', () => {
+      let result = getEdges(exampleGraph, ['Naboo', 'Pandora', 'Arendelle']);
+      expect(result).toStrictEqual([false, 0]);
 
-    res = getEdges(exampleGraph, ['Naboo', 'Metropolis', 'Pandora']);
-    expect(res).toStrictEqual([false, 0]);
+      result = getEdges(exampleGraph, ['Narnia', 'Arendelle', 'Naboo']);
+      expect(result).toStrictEqual([false, 0]);
 
+      result = getEdges(exampleGraph, ['Naboo', 'Metropolis', 'Pandora']);
+      expect(result).toStrictEqual([false, 0]);
+    });
+
+    it('Can return false and $0 if graph is empty, or there are 1 or fewer cities in the array', () => {
+      let result = getEdges(new Graph(), ['Arendelle', 'Monstropolis', 'Naboo']);
+      expect(result).toStrictEqual([false, 0]);
+
+      result = getEdges(graph, ['Arendelle']);
+      expect(result).toStrictEqual([false, 0]);
+
+      result = getEdges(graph, []);
+      expect(result).toStrictEqual([false, 0]);
+    });
   });
 });
