@@ -1,9 +1,18 @@
 'use strict';
 const Graph = require('../graph');
+const getEdges = require('../get-edges/getEdges');
 
 describe('Graphs', () => {
 
-  let graph = new Graph();
+  const graph = new Graph();
+  const exampleGraph = new Graph();
+  const metroville = exampleGraph.addVertex('Metroville');
+  const arendelle = exampleGraph.addVertex('Arendelle');
+  const monstropolis = exampleGraph.addVertex('Monstropolis');
+  const pandora = exampleGraph.addVertex('Pandora');
+  const narnia = exampleGraph.addVertex('Narnia');
+  const naboo = exampleGraph.addVertex('Naboo');
+
   let vertex1, vertex2, vertex5, vertex3, vertex4;
   it('Can successfully return null if the graph is empty', () => {
     expect(graph.getNodes()).toBe(null);
@@ -73,22 +82,16 @@ describe('Graphs', () => {
   });
 
   it('Can properly do a breadth first traversal of the graph with undirected edges', () => {
-    const exampleGraph = new Graph();
-    const metroville = exampleGraph.addVertex('Metroville');
-    const arendelle = exampleGraph.addVertex('Arendelle');
-    const monstropolis = exampleGraph.addVertex('Monstropolis');
-    const pandora = exampleGraph.addVertex('Pandora');
-    const narnia = exampleGraph.addVertex('Narnia');
-    const naboo = exampleGraph.addVertex('Naboo');
 
-    exampleGraph.addUnDirectedEdge(narnia, naboo);
-    exampleGraph.addUnDirectedEdge(pandora, arendelle);
-    exampleGraph.addUnDirectedEdge(arendelle, metroville);
-    exampleGraph.addUnDirectedEdge(metroville, narnia);
-    exampleGraph.addUnDirectedEdge(metroville, naboo);
-    exampleGraph.addUnDirectedEdge(arendelle, monstropolis);
-    exampleGraph.addUnDirectedEdge(monstropolis, naboo);
-    exampleGraph.addUnDirectedEdge(metroville, monstropolis);
+
+    exampleGraph.addUnDirectedEdge(narnia, naboo, 250);
+    exampleGraph.addUnDirectedEdge(pandora, arendelle, 150);
+    exampleGraph.addUnDirectedEdge(arendelle, metroville, 99);
+    exampleGraph.addUnDirectedEdge(metroville, narnia, 37);
+    exampleGraph.addUnDirectedEdge(metroville, naboo, 26);
+    exampleGraph.addUnDirectedEdge(arendelle, monstropolis, 42);
+    exampleGraph.addUnDirectedEdge(monstropolis, naboo, 73);
+    exampleGraph.addUnDirectedEdge(metroville, monstropolis, 105);
 
     let bfs = exampleGraph.breadthFirstSearch(pandora);
     const array = Array.from(bfs);
@@ -116,4 +119,25 @@ describe('Graphs', () => {
       ]);
   });
 
+  it('Can return true and correct cost if there is a direct flight on a multi location trip ', () => {
+    exampleGraph.addUnDirectedEdge(pandora, metroville, 82);
+
+    let result = getEdges(exampleGraph, ['Arendelle', 'Monstropolis', 'Naboo']);
+    expect(result).toStrictEqual([true, 115]);
+
+    result = getEdges(exampleGraph, ['Metroville', 'Pandora']);
+    expect(result).toStrictEqual([true, 82]);
+  });
+
+  it('Can return false and $0 if there is no direct flight', () => {
+    let res = getEdges(exampleGraph, ['Naboo', 'Pandora', 'Arendelle']);
+    expect(res).toStrictEqual([false, 0]);
+
+    res = getEdges(exampleGraph, ['Narnia', 'Arendelle', 'Naboo']);
+    expect(res).toStrictEqual([false, 0]);
+
+    res = getEdges(exampleGraph, ['Naboo', 'Metropolis', 'Pandora']);
+    expect(res).toStrictEqual([false, 0]);
+
+  });
 });
