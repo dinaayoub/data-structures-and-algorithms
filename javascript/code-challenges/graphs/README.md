@@ -45,11 +45,15 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
   * Time O(1) - assuming Map keeps track of its length while inserting objects, rather than by iterating over them when size is called.
   * Space O(1)
 6. breadth First()
-  *. Time O(n^2)
-  *. Space O(n) because if the graph is just all connected to the provided node, the queue would end up with n-1 nodes. Also because we use a visitedNodes which will house all the nodes at the end (although this doesn't copy the actual nodes, just puts them by reference in a new Set)
+  * Time O(n^2)
+  * Space O(1) since we aren't copying the nodes
+7. depthFirst()
+  * Time O(n^2) - it is unclear whether this is actually correct. most online sources disagree somewhat. 
+  * Space O(1) since we aren't copying the nodes in javascript
 
 ![white board](assets/uml.png)
 ![Get Edges white board](assets/whiteboard.png)
+![Depth First Traversal](assets/dfs.png)
 
 ## API
 
@@ -81,3 +85,7 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 * [x] Can return false and $0 if there is no direct flight
 * [x] Can return false and $0 if graph is empty, or there are 1 or fewer cities in the array
 * [x] Can return false and $0 if graph is empty, or there are 1 or fewer cities in the array
+
+#### Depth First Traversal
+
+* [x] Can return a list of nodes in the correct preorder depth first traversal

@@ -83,7 +83,6 @@ describe('Graphs', () => {
 
   it('Can properly do a breadth first traversal of the graph with undirected edges', () => {
 
-
     exampleGraph.addUnDirectedEdge(narnia, naboo, 250);
     exampleGraph.addUnDirectedEdge(pandora, arendelle, 150);
     exampleGraph.addUnDirectedEdge(arendelle, metroville, 99);
@@ -151,6 +150,37 @@ describe('Graphs', () => {
 
       result = getEdges(graph, []);
       expect(result).toStrictEqual([false, 0]);
+    });
+  });
+
+  describe('Depth First', () => {
+
+    let newGraph = new Graph();
+    let a = newGraph.addVertex('A');
+    let b = newGraph.addVertex('B');
+    let c = newGraph.addVertex('C');
+    let d = newGraph.addVertex('D');
+    let e = newGraph.addVertex('E');
+    let f = newGraph.addVertex('F');
+    let g = newGraph.addVertex('G');
+    let h = newGraph.addVertex('H');
+
+    newGraph.addUnDirectedEdge(a, b, 1);
+    newGraph.addUnDirectedEdge(a, d, 1);
+    newGraph.addUnDirectedEdge(b, c, 1);
+    newGraph.addUnDirectedEdge(c, g, 1);
+    newGraph.addUnDirectedEdge(d, e, 1);
+    newGraph.addUnDirectedEdge(d, h, 1);
+    newGraph.addUnDirectedEdge(d, f, 1);
+    newGraph.addUnDirectedEdge(b, d, 1);
+    newGraph.addUnDirectedEdge(h, f, 1);
+
+    //using our existing exampleGraph
+    it('Can return a list of nodes in the correct preorder depth first traversal', () => {
+      let result = newGraph.depthFirstSearch(a);
+      expect(Array.from(result)).toStrictEqual([
+        a, b, c, g, d, e, h, f
+      ]);
     });
   });
 });
